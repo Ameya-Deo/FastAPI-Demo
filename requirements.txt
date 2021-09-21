@@ -3,6 +3,9 @@ scipy
 scikit-learn
 matplotlib
 pandas
+boto3
+requests
+cv2
 fastapi
 uvicorn
 gunicorn==19.9.0
