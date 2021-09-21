@@ -17,18 +17,25 @@ app = FastAPI()
 # 3. Index route, opens automatically on http://127.0.0.1:8000
 @app.get('/')
 def index():
-    return {'message': 'Hello, World'}
+    return {'message': 'Successful'}
 
-# 4. Route with a single parameter, returns the parameter within a message
-#    Located at: http://127.0.0.1:8000/AnyNameHere
+'''4. Route with a single parameter, returns the parameter within a message
+    Located at: http://127.0.0.1:8000/AnyNameHere
 @app.get('/Welcome')
 def get_name(name: str):
-    return {'Enter the Image url': f'{name}'}
+    #return {'Enter the Image url': f'{name}'}'''
 
+# Deployment in Progress
+@app.post('/predict')
+def predict_age(image_url: str):
+    #file_type='image'
+    #response = upload_file_to_aws_s3(image_url, file_type)
+    #print("image_url:",image_url)
+    return image_url
 
 
 # 5. Run the API with uvicorn
-#    Will run on http://127.0.0.1:8000
+#    Will run on http://127.0.0.1:8000/docs
 if __name__ == '__main__':
     uvicorn.run(app, host='127.0.0.1', port=8000)
 #uvicorn main:app --reload
