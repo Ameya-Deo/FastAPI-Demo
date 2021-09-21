@@ -6,6 +6,7 @@ pandas
 boto3
 requests
 fastapi
+opencv-python
 uvicorn
 gunicorn==19.9.0
 uvloop
