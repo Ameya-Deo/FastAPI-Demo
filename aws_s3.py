@@ -54,7 +54,7 @@ def upload_file_to_aws_s3(url, file_type):
             
             # Open the server file as read mode and upload in AWS S3 Bucket.
             data = open(file_name, 'rb')
-            s3.Bucket(keys.AWS_BUCKET_NAME).put_object(Key=key, Body=data)
+            s3.Bucket(keys.AWS_BUCKET_NAME).put_object(Key=key, Body=data, ACL='public-read')
             data.close()
             
             # Format the return URL of upload file in S3 Bucket
